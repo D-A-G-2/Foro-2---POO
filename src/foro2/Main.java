@@ -163,7 +163,7 @@ public class Main {
                 "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
         if (respuesta == JOptionPane.YES_OPTION) {
             vehiculos.remove(v);
-            JOptionPane.showMessageDialog(null, "🗑️ Vehículo eliminado exitosamente.",
+            JOptionPane.showMessageDialog(null, " Vehículo eliminado exitosamente.",
                     "Eliminar", JOptionPane.INFORMATION_MESSAGE);
         }
     }
@@ -207,10 +207,10 @@ public class Main {
             try {
                 int valor = Integer.parseInt(texto.trim());
                 if (valor >= minimo && valor <= maximo) return valor;
-                JOptionPane.showMessageDialog(null, "⚠️ El valor debe estar entre "
+                JOptionPane.showMessageDialog(null, "️ El valor debe estar entre "
                         + minimo + " y " + maximo + ".", "Validación", JOptionPane.WARNING_MESSAGE);
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "⚠️ Debe ingresar un número entero válido.",
+                JOptionPane.showMessageDialog(null, "️ Debe ingresar un número entero válido.",
                         "Validación", JOptionPane.WARNING_MESSAGE);
             }
         }
@@ -224,10 +224,10 @@ public class Main {
             try {
                 double valor = Double.parseDouble(texto.trim());
                 if (valor > 0) return valor;
-                JOptionPane.showMessageDialog(null, "⚠️ El valor debe ser mayor a cero.",
+                JOptionPane.showMessageDialog(null, "️ El valor debe ser mayor a cero.",
                         "Validación", JOptionPane.WARNING_MESSAGE);
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "⚠️ Debe ingresar un número válido (use punto para decimales).",
+                JOptionPane.showMessageDialog(null, "️ Debe ingresar un número válido (use punto para decimales).",
                         "Validación", JOptionPane.WARNING_MESSAGE);
             }
         }
