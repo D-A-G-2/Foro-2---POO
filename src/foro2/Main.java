@@ -9,7 +9,10 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author diego
+ * @author 
+ * Gabriela Cecibel Arévalo Molina
+ * Diego Andrés Guevara Girón
+ * David Josué Pérez Hernández
  */
 public class Main {
 
@@ -29,7 +32,7 @@ public class Main {
         int opcion;
         do {
             Integer seleccion = pedirEntero(MENU, 1, 5);
-            opcion = (seleccion == null) ? 5 : seleccion; // Cancelar = salir
+            opcion = (seleccion == null) ? 5 : seleccion;
 
             switch (opcion) {
                 case 1: registrarVehiculo(); break;
@@ -47,7 +50,7 @@ public class Main {
     // Metodos del sistema
 
     static void registrarVehiculo() {
-        // 1) Elegir tipo de vehículo
+        // 1) Elige el tipo de vehículo
         String[] tipos = {"Automóvil", "Motocicleta", "Camión"};
         String tipo = (String) JOptionPane.showInputDialog(null,
                 "Seleccione el tipo de vehículo a registrar:", "Registro de Vehículos",
@@ -92,7 +95,7 @@ public class Main {
             if (tipoMoto == null) return;
             vehiculos.add(new Motocicleta(codigo, marca, modelo, anio, precio, cilindraje, tipoMoto));
 
-        } else { // Camión
+        } else { // En caso seleccionar el Camión
             Double capacidad = pedirDecimal("Capacidad de carga en toneladas (mayor a 0):");
             if (capacidad == null) return;
             Integer ejes = pedirEntero("Cantidad de ejes (2 - 6):", 2, 6);
@@ -183,7 +186,7 @@ public class Main {
         return null;
     }
 
-    // Pide texto y no permite campos vacíos
+
     static String pedirTexto(String mensaje) {
         while (true) {
             String texto = JOptionPane.showInputDialog(null, mensaje,
@@ -196,7 +199,6 @@ public class Main {
         }
     }
 
-    // Pide un número entero dentro de un rango (maneja la excepción si escriben letras)
     static Integer pedirEntero(String mensaje, int minimo, int maximo) {
         while (true) {
             String texto = JOptionPane.showInputDialog(null, mensaje,
@@ -214,7 +216,6 @@ public class Main {
         }
     }
 
-    // Pide un número decimal mayor a cero (usa PUNTO para decimales, ej: 15500.50)
     static Double pedirDecimal(String mensaje) {
         while (true) {
             String texto = JOptionPane.showInputDialog(null, mensaje,
