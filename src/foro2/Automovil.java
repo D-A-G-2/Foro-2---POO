@@ -9,18 +9,26 @@ package foro2;
  * @author diego
  */
 public class Automovil extends Vehiculo {
-    private final int cantidadPuertas;
-    private final String tipoCombustible;
+    private int cantidadPuertas;
+    private String tipoCombustible;
 
-    public Automovil(String codigo, String marca, String modelo, int anio, double precio, 
+    public Automovil(String codigo, String marca, String modelo, int anio, double precio,
                      int cantidadPuertas, String tipoCombustible) {
-        super(codigo, marca, modelo, anio, precio); // Llama al constructor de Vehiculo
+        super(codigo, marca, modelo, anio, precio); // Reutiliza el constructor del padre
         this.cantidadPuertas = cantidadPuertas;
         this.tipoCombustible = tipoCombustible;
     }
 
+    public int getCantidadPuertas() { return cantidadPuertas; }
+    public void setCantidadPuertas(int c) { this.cantidadPuertas = c; }
+    public String getTipoCombustible() { return tipoCombustible; }
+    public void setTipoCombustible(String t) { this.tipoCombustible = t; }
+
     @Override
     public String mostrarDatos() {
-        return super.mostrarDatos() + "\nPuertas: " + cantidadPuertas + "\nCombustible: " + tipoCombustible;
+        return super.mostrarDatos()
+             + "\nTipo: AUTOMÓVIL"
+             + "\nCantidad de puertas: " + cantidadPuertas
+             + "\nTipo de combustible: " + tipoCombustible;
     }
 }
